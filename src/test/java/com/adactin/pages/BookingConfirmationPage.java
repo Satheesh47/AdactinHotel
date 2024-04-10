@@ -1,10 +1,10 @@
 package com.adactin.pages;
 
-import com.adactin.base.PageUtility;
+import com.adactin.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class BookingConfirmationPage extends PageUtility {
+public class BookingConfirmationPage extends BaseClass {
 
     private By lblBookingConfirmationHeader = By.xpath("//td[@class='login_title']");
     private By orderNumber = By.id("order_no");

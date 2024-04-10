@@ -1,12 +1,12 @@
 package com.adactin.pages;
 
-import com.adactin.base.PageUtility;
+import com.adactin.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class BookingHotelPage extends PageUtility {
+public class BookingHotelPage extends BaseClass {
 
     private By pageHeader = By.xpath("(//td[@class='login_title'])[2]");
     private By txtFirstName = By.id("first_name");

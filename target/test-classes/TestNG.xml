@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Adactin Hotel Test Suite" thread-count="2" parallel="tests" verbose="1">
+    <test name="Login">
+        <classes>
+            <class name="com.adactin.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Search Hotel">
+        <classes>
+            <class name="com.adactin.tests.SearchHotelTest"/>
+        </classes>
+    </test>
+
+    <test name="Hotel Booking">
+        <classes>
+            <class name="com.adactin.tests.BookHotelTest"/>
+        </classes>
+    </test>
+
+    <test name="Logout">
+        <classes>
+            <class name="com.adactin.tests.LogoutTest"/>
+        </classes>
+    </test>
+
+</suite>

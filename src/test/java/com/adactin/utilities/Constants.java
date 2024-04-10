@@ -9,6 +9,8 @@ public class Constants {
     public static final String USERNAME = "STester2024";
     public static final String PASSWORD = "Adactin2024";
 
+    public static final String EXCEL_PATH = System.getProperty("user.dir")+"//src//test//resources//Test_Data.xlsx";
+
     // Login Page
 
     public static final String LOGIN_PAGE_TITLE = "Adactin.com - Hotel Reservation System";
@@ -22,7 +24,9 @@ public class Constants {
     public static final String HOTEL_PRICE_GST = "AUD $ 260";
     public static final String LOCATION_ERROR_MESSAGE = "Please Select a Location";
     public static final String CONTINUE_ERROR_MESSAGE = "Please Select a Hotel";
+    public static final String LOCATION_RESET_VALUE = "- Select Location -";
 
+    public static final String HOTEL_RESET_VALUE = "- Select Hotel -";
     // Logout Page
     public static final String LOGOUT_PAGE_TITLE = "Adactin.com - Logout";
     public static final String LOGOUT_PAGE_URL = "https://adactinhotelapp.com/Logout.php";

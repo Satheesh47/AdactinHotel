@@ -3,8 +3,11 @@ package com.adactin.tests;
 import com.adactin.base.BaseTest;
 import com.adactin.pages.LoginPage;
 import com.adactin.utilities.Constants;
+import com.adactin.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.io.IOException;
 
 public class BookHotelTest extends BaseTest {
 
@@ -35,22 +38,25 @@ public class BookHotelTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void verifyBookHotelPageHeaderTitleAndUrl() {
-        bookingHotelPage = searchHotelPage.bookAHotel("Sydney","Hotel Creek","Standard",
-                "1 - One","28/04/2024","30/04/2024",
-                "2 - Two","1 - One");
+    public void verifyBookHotelPageHeaderTitleAndUrl() throws IOException {
+        bookingHotelPage = searchHotelPage.bookAHotel(ExcelUtility.readExcel(0,1),ExcelUtility.readExcel(1,1),
+                ExcelUtility.readExcel(2,1),ExcelUtility.readExcel(3,1),
+                ExcelUtility.readExcel(4,1),ExcelUtility.readExcel(5,1),
+                ExcelUtility.readExcel(6,1),ExcelUtility.readExcel(7,1));
         Assert.assertTrue(bookingHotelPage.validateBookHotelPageHeaderTitleUrl(Constants.BOOK_HOTEL_PAGE_HEADER,
                 Constants.BOOK_HOTEL_PAGE_TITLE,Constants.BOOK_HOTEL_PAGE_URL),"Booking Hotel Page Header/Title/Url validation mismatched");
     }
 
     @Test(priority = 2)
-    public void bookAHotel() {
-        bookingHotelPage = searchHotelPage.bookAHotel("Sydney","Hotel Creek","Standard",
-                "1 - One","28/04/2024","30/04/2024",
-                "2 - Two","1 - One");
-        bookingHotelPage.enterBookingDetails("FTest","LTest","123 Test St,TestCity-100",
-                "0123456789123456","VISA","January",
-                "2030","123");
+    public void bookAHotel() throws IOException {
+        bookingHotelPage = searchHotelPage.bookAHotel(ExcelUtility.readExcel(0,1),ExcelUtility.readExcel(1,1),
+                ExcelUtility.readExcel(2,1),ExcelUtility.readExcel(3,1),
+                ExcelUtility.readExcel(4,1),ExcelUtility.readExcel(5,1),
+                ExcelUtility.readExcel(6,1),ExcelUtility.readExcel(7,1));
+        bookingHotelPage.enterBookingDetails(ExcelUtility.readExcel(8,1),ExcelUtility.readExcel(9,1),
+                ExcelUtility.readExcel(10,1), ExcelUtility.readExcel(11,1),
+                ExcelUtility.readExcel(12,1),ExcelUtility.readExcel(13,1),
+                ExcelUtility.readExcel(14,1),ExcelUtility.readExcel(15,1));
         bookingConfirmationPage = bookingHotelPage.clickBookNow();
         Assert.assertTrue(bookingConfirmationPage.verifyBookingConfirmationHeader(Constants.BOOKING_CONFIRMATION_PAGE_HEADER),"Booking Confirmation page header mismatched");
         Assert.assertNotNull(bookingConfirmationPage.getOrderNo(),"Order Number is null");

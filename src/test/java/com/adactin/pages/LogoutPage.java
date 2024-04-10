@@ -1,10 +1,10 @@
 package com.adactin.pages;
 
-import com.adactin.base.PageUtility;
+import com.adactin.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LogoutPage extends PageUtility {
+public class LogoutPage extends BaseClass {
     private By logoutMessage = By.xpath("//td[@class='reg_success']");
     private By loginLink = By.xpath("//a[normalize-space()='Click here to login again']");
 
