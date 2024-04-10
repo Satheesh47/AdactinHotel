@@ -1,10 +1,10 @@
 package com.adactin.pages;
 
-import com.adactin.base.PageUtility;
+import com.adactin.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends PageUtility {
+public class LoginPage extends BaseClass {
 
     private By txtUserName = By.id("username");
     private By txtPassword = By.id("password");

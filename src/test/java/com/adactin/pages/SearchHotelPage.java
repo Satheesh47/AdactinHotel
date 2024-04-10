@@ -1,12 +1,12 @@
 package com.adactin.pages;
 
-import com.adactin.base.PageUtility;
+import com.adactin.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 
-public class SearchHotelPage extends PageUtility {
+public class SearchHotelPage extends BaseClass {
 
     private By lblUsernameDisplay = By.id("username_show");
     private By drpLocation = By.id("location");
