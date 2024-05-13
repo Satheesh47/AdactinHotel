@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/sathe/IdeaProjects/AdactinHotel">
+        <classes>
+            <class name="com.adactin.tests.BookHotelTest">
+                <methods>
+                    <include name="verifyBookHotelPageHeaderTitleAndUrl"/>
+                    <include name="bookAHotel"/>
+                </methods>
+            </class>
+            <class name="com.adactin.tests.LoginTest">
+                <methods>
+                    <exclude name="login_with_valid_Username_invalid_password"/>
+                    <exclude name="login_with_invalid_Username_valid_password"/>
+                    <exclude name="login_with_blank_Username_valid_password"/>
+                    <exclude name="login_with_valid_Username_blank_password"/>
+                    <exclude name="login_with_blank_Username_blank_password"/>
+                    <exclude name="login_with_valid_Username_valid_password"/>
+                    <include name="verifyLoginTitle"/>
+                </methods>
+            </class>
+            <class name="com.adactin.tests.LogoutTest">
+                <methods>
+                    <exclude name="verifyLogoutPageTitleAndURL"/>
+                    <include name="verifyLogoutMessage"/>
+                    <exclude name="verifyLoginLinkWorking"/>
+                </methods>
+            </class>
+            <class name="com.adactin.tests.SearchHotelTest">
+                <methods>
+                    <exclude name="verifySearchHotelURLAndTitle"/>
+                    <exclude name="searchHotelWithoutLocation"/>
+                    <exclude name="resetSearchHotelForm"/>
+                    <include name="searchHotel"/>
+                    <exclude name="verifyThePriceOfTheHotel"/>
+                    <include name="cancelTheSelectHotel"/>
+                    <exclude name="continueWithoutSelectingHotel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

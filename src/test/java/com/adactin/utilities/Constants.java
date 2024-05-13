@@ -5,14 +5,12 @@ public class Constants {
     public static final String CHROME = "chrome";
     public static final String EDGE = "edge";
     public static final String LOGIN_URL = "https://adactinhotelapp.com/index.php";
-    public static final String BROWSER = "Chrome";
+    public static final String BROWSER = "Edge";
     public static final String USERNAME = "STester2024";
     public static final String PASSWORD = "Adactin2024";
-
     public static final String EXCEL_PATH = System.getProperty("user.dir")+"//src//test//resources//Test_Data.xlsx";
 
     // Login Page
-
     public static final String LOGIN_PAGE_TITLE = "Adactin.com - Hotel Reservation System";
 
     // Search Hotel Page
@@ -40,6 +38,5 @@ public class Constants {
 
     // Booking Confirmation page
     public static final String BOOKING_CONFIRMATION_PAGE_HEADER = "Booking Confirmation";
-
 
 }

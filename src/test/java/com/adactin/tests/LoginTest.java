@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class LoginTest extends BaseTest {
-
     @BeforeTest
     public void testClassInitialize() {
         System.out.println("***** Login Test Class initialized *****");
@@ -15,7 +14,7 @@ public class LoginTest extends BaseTest {
 
     @BeforeMethod
     public void launchBrowser() {
-        browserDriverSetup(Constants.BROWSER);
+        browserDriverSetup();
         goToURL(Constants.LOGIN_URL);
         System.out.println("Navigated to "+Constants.LOGIN_URL);
         loginPage = new LoginPage(driver);

@@ -14,7 +14,7 @@ public class LogoutTest extends BaseTest {
 
     @BeforeMethod
     public void launchBrowser() throws InterruptedException {
-        browserDriverSetup(Constants.BROWSER);
+        browserDriverSetup();
         goToURL(Constants.LOGIN_URL);
         System.out.println("Navigated to "+Constants.LOGIN_URL);
         loginPage = new LoginPage(getDriver());

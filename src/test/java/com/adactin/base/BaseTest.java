@@ -2,13 +2,16 @@ package com.adactin.base;
 
 import com.adactin.pages.*;
 import com.adactin.utilities.Constants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 public class BaseTest {
+    String browser;
     protected LoginPage loginPage;
     protected SearchHotelPage searchHotelPage;
     protected BookingHotelPage bookingHotelPage;
@@ -36,19 +39,21 @@ public class BaseTest {
         System.out.println("***** Framework Completed *****");
     }
 
-    public void browserDriverSetup(String browser) {
+    public void browserDriverSetup() {
 
-        if (browser.equalsIgnoreCase(Constants.CHROME)) {
-            System.setProperty("webdriver.chrome.driver", "C://Users//sathe//Downloads//chromedriver.exe");
+        browser = System.getProperty("browserProperty");
+
+        if (browser.equalsIgnoreCase("Chrome")) {
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             System.out.println("Chrome Browser Launched");
             driver.manage().window().maximize();
         }
 
-        if (browser.equalsIgnoreCase(Constants.FIREFOX)) {
-            System.setProperty("webdriver.firefox.driver", "C://Users//sathe//Downloads//chromedriver.exe");
-            driver = new FirefoxDriver();
-            System.out.println("Firefox Browser Launched");
+        if (browser.equalsIgnoreCase("Edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+            System.out.println("Edge Browser Launched");
             driver.manage().window().maximize();
         }
 

@@ -10,7 +10,6 @@ import org.testng.annotations.*;
 import java.io.IOException;
 
 public class SearchHotelTest extends BaseTest {
-
     @BeforeTest
     public void testClassInitialize() {
         System.out.println("***** Search Hotel Test Class initialized *****");
@@ -18,7 +17,7 @@ public class SearchHotelTest extends BaseTest {
 
     @BeforeMethod
     public void launchBrowser() {
-        browserDriverSetup(Constants.BROWSER);
+        browserDriverSetup();
         goToURL(Constants.LOGIN_URL);
         System.out.println("Navigated to "+Constants.LOGIN_URL);
         loginPage = new LoginPage(getDriver());
